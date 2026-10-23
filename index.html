@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f8f4" />
+  <meta name="description" content="Chronos — asistencia y jornada del equipo URNA." />
+  <title>Chronos · Asistencia URNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Chronos inicio"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 3"/><path d="M8 4 5 7M24 4l3 3"/></svg></span><span>chronos<span class="brand-dot">.</span><small>URNA · CONTROL DE JORNADA</small></span></a>
+      <div class="workspace-label">TU ESPACIO</div>
+      <nav class="side-nav" aria-label="Navegación principal">
+        <button class="nav-item active" data-view="attendance"><span class="nav-icon">◉</span><span>Asistencia</span><span class="nav-arrow">›</span></button>
+        <button class="nav-item" data-view="dashboard"><span class="nav-icon">▥</span><span>Estadísticas</span></button>
+        <button class="nav-item" data-view="history"><span class="nav-icon">◷</span><span>Historial</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><div class="tip-spark">✦</div><strong>¡Vas por buen camino!</strong><p>La constancia de hoy construye grandes semanas.</p><span class="tip-foot">RACHA DEL EQUIPO <b>🔥 12 DÍAS</b></span></div>
+        <div class="profile-row"><div class="avatar avatar-user">MC</div><div><b>María Camila</b><small>Administradora</small></div><button class="more-btn" aria-label="Más opciones">···</button></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div><span class="eyebrow">MARTES, <span id="today-label">20 OCT</span></span><h1 id="page-title">¡Hola, María! <span class="wave">✦</span></h1></div><div class="topbar-actions"><div class="live-pill"><span></span> Sede Central</div><button class="icon-button notification" aria-label="Notificaciones">♧<i></i></button><div class="avatar avatar-user top-avatar">MC</div></div></header>
+
+      <section class="view active" id="view-attendance" aria-label="Asistencia">
+        <div class="welcome-strip"><div><span class="welcome-kicker">TU JORNADA, EN UN SOLO LUGAR</span><h2>Un buen día empieza<br class="mobile-break"/> <em>llegando a tiempo.</em></h2><p>Registra tu asistencia y sigue sumando a tu racha.</p></div><div class="welcome-art" aria-hidden="true"><div class="sun-orbit"></div><div class="art-clock"><span>09</span><i></i><b>12</b></div><div class="art-star">✦</div><div class="art-leaf">⌁</div></div></div>
+        <div class="attendance-grid">
+          <article class="card scanner-card">
+            <div class="card-heading"><div><div class="section-label"><span class="label-dot"></span> REGISTRO DE ASISTENCIA</div><h3>Escanea tu código QR</h3></div><span class="secure-badge">⌑ <span>SEGURO</span></span></div>
+            <div class="scan-stage" id="scan-stage"><div class="scan-glow"></div><div class="scan-corner c1"></div><div class="scan-corner c2"></div><div class="scan-corner c3"></div><div class="scan-corner c4"></div><div class="qr-graphic" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M7 7h38v38H7zM16 16v20h20V16zM75 7h38v38H75zM84 16v20h20V16zM7 75h38v38H7zM16 84v20h20V84zM57 8h9v9h-9zM57 25h9v9h-9zM49 42h9v9h-9zM66 42h9v9h-9zM57 58h9v9h-9zM75 58h9v9h-9zM92 58h9v9h-9zM49 75h9v9h-9zM66 75h9v9h-9zM83 75h9v9h-9zM100 75h9v9h-9zM57 91h9v9h-9zM74 91h9v9h-9zM91 91h9v9h-9zM57 108h9v5h-9zM108 49h5v9h-5zM108 66h5v9h-5z"/></svg></div><div class="scan-line"></div><span class="stage-caption" id="scanner-caption">Ubica el código dentro del marco</span><span class="camera-icon">⌁</span></div>
+            <div class="scan-controls"><label class="field-label" for="employee-select">REGISTRAR A</label><select id="employee-select" class="employee-select"></select></div>
+            <div class="type-toggle" role="group" aria-label="Tipo de marcaje"><button class="type-option selected" data-type="Entrada"><span class="type-symbol entry">↘</span><span><b>Entrada</b><small>Inicio de jornada</small></span><span class="radio-dot"></span></button><button class="type-option" data-type="Salida"><span class="type-symbol exit">↗</span><span><b>Salida</b><small>Fin de jornada</small></span><span class="radio-dot"></span></button></div>
+            <button class="primary-button" id="scan-button"><span>▦</span> Simular escaneo QR <span class="button-arrow">→</span></button>
+            <div class="location-note"><span>⌖</span> Sede Central URNA <span class="location-separator">·</span> Bogotá, Colombia <span class="gps-dot"></span></div>
+          </article>
+          <div class="right-column">
+            <article class="card today-card"><div class="card-heading compact"><div><div class="section-label">EN VIVO <span class="live-dot"></span></div><h3>Resumen de hoy</h3></div><span class="date-chip" id="date-chip">HOY</span></div><div class="today-stats"><div class="today-stat"><span class="stat-icon mint">↘</span><div><strong id="today-entries">0</strong><small>Entradas</small></div></div><div class="today-stat"><span class="stat-icon lilac">↗</span><div><strong id="today-exits">0</strong><small>Salidas</small></div></div></div><div class="progress-caption"><span>Equipo registrado</span><b id="registered-label">0 de 8</b></div><div class="progress-track"><span id="registered-progress"></span></div></article>
+            <article class="card streak-card"><div class="streak-top"><div><span class="section-label">BUENA RACHA</span><h3>¡12 días seguidos!</h3><p>El equipo está encendido.<br/>¿Seguimos así?</p></div><div class="streak-emoji">🔥<span>12</span></div></div><div class="week-dots"><div><span>L</span><b>✓</b></div><div><span>M</span><b>✓</b></div><div><span>M</span><b>✓</b></div><div><span>J</span><b>✓</b></div><div><span>V</span><b>✓</b></div><div><span>S</span><b class="empty-day">·</b></div><div><span>D</span><b class="empty-day">·</b></div></div><div class="streak-footer"><span>RACHA SEMANAL DEL EQUIPO</span><b>5 / 7 días <span>↗</span></b></div></article>
+            <div class="quote-card"><span class="quote-mark">“</span><p>La puntualidad es el primer paso hacia un gran día.</p><span class="quote-star">✳</span></div>
+          </div>
+        </div>
+        <section class="recent-section"><div class="section-title-row"><div><div class="section-label">ACTIVIDAD RECIENTE</div><h3>Últimos marcajes</h3></div><button class="text-link" data-view="history">Ver historial <span>→</span></button></div><div class="recent-list" id="recent-list"></div></section>
+      </section>
+
+      <section class="view" id="view-dashboard" aria-label="Estadísticas">
+        <div class="page-intro"><div><span class="section-label">EL EQUIPO EN NÚMEROS</span><h2>Así vamos, <em>juntos.</em></h2><p>Un vistazo a la puntualidad y el esfuerzo de tu equipo.</p></div><div class="period-select-wrap"><span>PERIODO</span><select id="period-select" aria-label="Periodo estadístico"><option value="week">Esta semana</option><option value="month">Este mes</option></select></div></div>
+        <div class="metric-grid"><article class="card metric-card punctuality-card"><div class="metric-top"><span>PUNTUALIDAD SEMANAL</span><span class="metric-icon">✦</span></div><div class="metric-value"><strong id="punctuality-value">94</strong><small>%</small><span class="metric-change">↗ 4.2%</span></div><div class="metric-sub">¡Por encima de la meta del 90%!</div><div class="mini-bars" id="mini-bars"></div><div class="bar-labels"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div></article>
+          <article class="card metric-card hours-card"><div class="metric-top"><span>HORAS ACUMULADAS</span><span class="metric-icon blue-icon">◷</span></div><div class="metric-value"><strong id="hours-value">1,284</strong><small>h</small></div><div class="metric-sub">Este mes <b>·</b> <span class="positive">+8% vs. mes anterior</span></div><div class="hours-illustration"><div class="hour-line"></div><span>Jornada bien aprovechada</span><span class="hours-spark">✳</span></div></article>
+          <article class="card metric-card today-count-card"><div class="metric-top"><span>MARCAJES DE HOY</span><span class="metric-icon coral-icon">↗</span></div><div class="split-counts"><div><strong id="dashboard-entries">0</strong><span>Entradas</span><small class="green-label">● En jornada</small></div><i></i><div><strong id="dashboard-exits">0</strong><span>Salidas</span><small class="muted-label">● Completadas</small></div></div><div class="count-footer"><span>Actualizado en tiempo real</span><span class="pulse-dot"></span></div></article>
+        </div>
+        <div class="dashboard-lower"><article class="card chart-card"><div class="section-title-row chart-title"><div><div class="section-label">TENDENCIA</div><h3>Ritmo de puntualidad</h3></div><div class="chart-legend"><span><i></i> A tiempo</span><span><i></i> Tarde</span></div></div><div class="chart-area" id="chart-area"><div class="chart-y-labels"><span>100%</span><span>75%</span><span>50%</span><span>25%</span></div><div class="chart-draw" id="chart-draw"></div></div><div class="chart-x-labels"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div></article>
+          <article class="card leaderboard-card"><div class="section-title-row leaderboard-title"><div><div class="section-label">EL TOP DEL EQUIPO</div><h3>Racha de puntualidad</h3></div><span class="trophy">♜</span></div><div class="leader-list" id="leader-list"></div><div class="leader-foot">Pequeños hábitos, grandes logros <span>✦</span></div></article></div>
+      </section>
+
+      <section class="view" id="view-history" aria-label="Historial">
+        <div class="page-intro history-intro"><div><span class="section-label">TODO QUEDA REGISTRADO</span><h2>Tu tiempo, <em>en orden.</em></h2><p>Consulta y filtra los marcajes del equipo URNA.</p></div><button class="export-button" id="export-button">↓ <span>Exportar CSV</span></button></div>
+        <article class="card history-card"><div class="history-toolbar"><div><h3>Registro de marcajes</h3><span id="record-count">0 registros</span></div><div class="filters"><label class="filter-control">⌕ <input type="search" id="search-input" placeholder="Buscar empleado" aria-label="Buscar empleado" /></label><label class="filter-control date-filter">▦ <input type="date" id="date-filter" aria-label="Filtrar por fecha" /></label><button class="clear-filters" id="clear-filters" title="Limpiar filtros" aria-label="Limpiar filtros">↻</button></div></div><div class="table-wrap"><table><thead><tr><th>EMPLEADO</th><th>FECHA Y HORA</th><th>TIPO</th><th>ESTADO</th><th>UBICACIÓN</th></tr></thead><tbody id="history-body"></tbody></table></div><div class="empty-state hidden" id="empty-state"><span>⌕</span><b>No encontramos marcajes</b><p>Prueba con otro nombre o cambia los filtros.</p></div><div class="mobile-record-list" id="mobile-record-list"></div></article>
+        <div class="history-footnote"><span>⌑</span> Tus registros se guardan de forma segura en este dispositivo.</div>
+      </section>
+      <footer class="app-footer">HECHO CON <span>♥</span> PARA EL EQUIPO URNA <i>·</i> CHRONOS v1.0</footer>
+    </main>
+    <nav class="bottom-nav" aria-label="Navegación inferior"><button class="bottom-item active" data-view="attendance"><span>◉</span><small>Asistencia</small></button><button class="bottom-item" data-view="dashboard"><span>▥</span><small>Estadísticas</small></button><button class="bottom-item" data-view="history"><span>◷</span><small>Historial</small></button></nav>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span><div><b>¡Marcaje registrado!</b><small id="toast-message"></small></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
